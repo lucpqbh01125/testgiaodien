@@ -1,0 +1,61 @@
+name: Notify Discord on commits & PRs
+
+on:
+  push:
+    branches:
+      - "**"        # nhận mọi nhánh
+  pull_request:
+    types: [opened, reopened, ready_for_review, closed, converted_to_draft]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build commit list
+        id: build
+        run: |
+          # Đọc payload gốc của GitHub event
+          COMMITS=$(jq -r '.commits | length' "$GITHUB_EVENT_PATH")
+          if [ "$GITHUB_EVENT_NAME" = "push" ] && [ "$COMMITS" -gt 0 ]; then
+            LINES=$(jq -r '.commits[] | "- \(.id[0:7]) \(.message | gsub("\n"; " ")) — by **\(.author.username // .author.name)** (<\(.url)>)"' "$GITHUB_EVENT_PATH")
+            echo "title=📦 Push to ${GITHUB_REPOSITORY}#${GITHUB_REF_NAME:-$(jq -r .ref "$GITHUB_EVENT_PATH" | sed "s#refs/heads/##")}" >> $GITHUB_OUTPUT
+            echo "desc=**Pusher:** ${GITHUB_ACTOR}\n**Commits:** ${COMMITS}\n${LINES}" >> $GITHUB_OUTPUT
+            echo "url=$(jq -r '.compare // ""' "$GITHUB_EVENT_PATH")" >> $GITHUB_OUTPUT
+          elif [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
+            TITLE=$(jq -r '.pull_request.title' "$GITHUB_EVENT_PATH")
+            NUMBER=$(jq -r '.pull_request.number' "$GITHUB_EVENT_PATH")
+            STATE=$(jq -r '.pull_request.state' "$GITHUB_EVENT_PATH")
+            ACTION=$(jq -r '.action' "$GITHUB_EVENT_PATH")
+            HTML_URL=$(jq -r '.pull_request.html_url' "$GITHUB_EVENT_PATH")
+            USER=$(jq -r '.pull_request.user.login' "$GITHUB_EVENT_PATH")
+            echo "title=🔀 PR #${NUMBER} ${ACTION}: ${TITLE}" >> $GITHUB_OUTPUT
+            echo "desc=**By:** ${USER}\n**State:** ${STATE}" >> $GITHUB_OUTPUT
+            echo "url=${HTML_URL}" >> $GITHUB_OUTPUT
+          else
+            echo "title=ℹ️ ${GITHUB_EVENT_NAME} on ${GITHUB_REPOSITORY}" >> $GITHUB_OUTPUT
+            echo "desc=No details" >> $GITHUB_OUTPUT
+            echo "url=" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Send to Discord
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          TITLE: ${{ steps.build.outputs.title }}
+          DESC: ${{ steps.build.outputs.desc }}
+          URL: ${{ steps.build.outputs.url }}
+        run: |
+          # Tạo payload với embed (đẹp & gọn)
+          jq -n --arg title "$TITLE" --arg desc "$DESC" --arg url "$URL" \
+          '{
+            "embeds": [{
+              "title": $title,
+              "description": $desc,
+              "url": ($url | select(. != "")),
+              "timestamp": (now | todate),
+              "footer": {"text": "GitHub → Discord"},
+              "author": {"name": env.GITHUB_REPOSITORY}
+            }]
+          }' > payload.json
+
+          curl -sS -X POST -H "Content-Type: application/json" \
+            -d @payload.json "$DISCORD_WEBHOOK_URL"
