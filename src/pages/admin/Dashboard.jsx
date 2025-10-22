@@ -7,8 +7,6 @@ export default function Dashboard(){
     return(
     <div className="full">
      
-    </div>
-
-    
+    </div> 
     )
 }
