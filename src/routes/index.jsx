@@ -1,9 +1,12 @@
 import {createBrowserRouter, Navigate} from "react-router-dom";
 import {Routes} from '@/examples'
 import App from "@/App";
-
+import CardStreak from "@/pages/admin/CardStreak";
 const routes = [
-  {path:'.'},];
+   {path:'/card',
+   element: <CardStreak/>
+  },
+]
 
 if (import.meta.env.VITE_ENABLE_EXAMPLES === "true") {
   routes.push(...Routes);
@@ -14,7 +17,7 @@ if (import.meta.env.VITE_ENABLE_EXAMPLES === "true") {
 } else {
     routes.push({
     path: "/*",
-    element: <App />,
+    element: <CardStreak />,
   });
 }
 

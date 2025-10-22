@@ -1,0 +1,18 @@
+.card-streak{
+background-color: rgb(205, 20, 20);
+}
+.card-size{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 24px 20px;
+gap: 16px;
+width: 366.67px;
+height: 296px;
+background: #FFFFFF;
+box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.04), 0px 4px 12px rgba(20, 20, 21, 0.03);
+border-radius: 12px;
+flex: none;
+order: 0;
+flex-grow: 1;
+}
