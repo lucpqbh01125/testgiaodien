@@ -1,6 +1,4 @@
 import {configureStore } from '@reduxjs/toolkit';
-
-
 export const setupStore = async (preloadedState) => {
     const reducer ={};
 
@@ -16,3 +14,4 @@ export const setupStore = async (preloadedState) => {
 
     }); 
 };
+
