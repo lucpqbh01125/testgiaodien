@@ -39,7 +39,8 @@ export default function CardTime() {
           >
             3h21m
           </Typography>
-          <Typography style={{width: "197px", color: "#696969", lineHeight: "30px", fontSize: "20px", height: "30px", fonFamily: "Metropolis", fontWeight:600, }}>Thời gian học (ngày)</Typography>
+          <Typography style={{width: "197px", color: "#5e5e5e", lineHeight: "30px", fontSize: "20px", height: "30px", fontFamily: "Metropolis", fontWeight:600, whiteSpace: "nowrap",
+ }}>Thời gian học (ngày)</Typography>
         </Box>
         <Typography style={{fontWeight: 500, lineHeight:"20px", color:"#858C95", width: "290px", height: "20px",fontSize: "14px",}}>Chăm chỉ học tập mỗi ngày nào</Typography>
         </Box>

@@ -9,6 +9,7 @@ box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.04), 0px 4px 12px rgba(20, 20, 21, 0.03)
 border-radius: 12px;
 box-sizing: border-box;
 position:relative;
+background-color: #ffffff;
 }
 .exp-above{
 display: flex;
@@ -69,7 +70,8 @@ height: 26px;
 background: #FFF6D5;
 border: 2px solid #FFE380;
 border-radius: 128px;
-box-sizing:border-box
+box-sizing:border-box;
+white-space: nowrap;
 }
 
 .semi-inside{

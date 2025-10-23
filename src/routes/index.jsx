@@ -10,6 +10,7 @@ import Ads from '@/pages/admin/Ads';
 import Rank from '@/pages/admin/Rank';
 import CardExp from "@/pages/admin/CardExp";
 import CardTime from "@/pages/admin/CardTime";
+import Dashboard from '@/pages/admin/Dashboard';
 
 const routes = [
   { path: '/card', element: <CardStreak /> },
@@ -43,6 +44,9 @@ const routes = [
    {path:'/cardtime',
    element: <CardTime/>
   },
+  {path:'/dashboard',
+  element:<Dashboard/>
+  }
 ];
 
 if (import.meta.env.VITE_ENABLE_EXAMPLES === 'true') {

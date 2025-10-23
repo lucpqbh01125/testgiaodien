@@ -1,0 +1,121 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.dashboard-container{
+    display: flex;
+    justify-content: center;
+    width: 1920px;
+    min-height: 1080px;
+    height: auto;
+    opacity: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.sidebar-section{
+    width: 304px;
+    height: 1080px;
+    opacity: 1;
+    gap: 16px;
+    border-right-width: 2px;
+
+}
+
+.main-section{
+    width: 1616px;
+    min-height: 925px;
+    height: auto;
+    opacity: 1;
+    gap: 24px;
+
+    display: flex;
+    flex-direction: column;
+}
+.header-section{
+    width: 1616px;
+    height: 101px;
+    justify-content: space-between;
+    opacity: 1;
+    border-bottom-width: 2px;
+    padding-top: 20px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+
+.cards-section{
+    width: 1616px;
+    min-height: 800px;
+    height: auto;
+    opacity: 1;
+    display: flex;
+
+
+}
+
+.card-item-section{
+    width: 1212px;
+    height: 710px;
+    opacity: 1;
+    gap: 24px;
+    padding-right: 40px;
+    padding-left: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.card-ads{
+    width: 404px;
+    min-height: 800px;
+    height: auto;
+    opacity: 1;
+    gap: 16px;
+    padding-right: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    transition: height 0.3s ease;
+}
+
+.card-item-content{
+   
+    width: 1132px;
+    height: 296px;
+    opacity: 1;
+    gap: 16px;
+    display: flex;
+    align-items: center;
+
+
+}
+.card-item-chart{
+    width: 1132px;
+    height: 390px;
+    opacity: 1;
+    gap: 24px;
+    display: flex;
+    align-items: center;
+
+}
+
+.rank-section{
+    width: 364px;
+    min-height: 524px;
+    height: auto;
+    flex-shrink: 0;
+    transition: height 0.3s ease;
+}
+
+.ads-section{
+    width: 364px;
+    min-height: 260px;
+    height: auto;
+    flex-shrink: 0;
+    margin-top: auto;
+    transition: margin-top 0.3s ease;
+}

@@ -88,13 +88,15 @@
 }
 
 .rank-item{
-    width: auto;
+    width: 100px;
     height: 200px;
     opacity: 1;
-    gap: 8px;
+    gap: 0px;
     display: flex;
     flex-direction: column;
-    align-items: center;  
+    align-items: center;
+    position: relative;
+    justify-content: flex-end;
 }
 
 .rank-item-header{
@@ -106,7 +108,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    position: absolute;
+    top: 0;
+    z-index: 2;
 }
 .rank-item-header p{
     font-family: Inter;
@@ -152,16 +156,27 @@
 
 }
 
-.rank-tanggiam .linear{
+.rank-tanggiam {
+    position: relative;
+    z-index: 1;
     width: 100px;
     height: 100px;
-    opacity: 0.5;
-    border-bottom-right-radius: 12px;
-    border-top-right-radius: 12px;
-    box-sizing: border-box;
-      transform: rotate(-90deg);
-
+    border-radius: 6px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
+
+.custom-progress-bar {
+    width: 100%;
+    background: linear-gradient(180deg, #FA9300 0%, #E67E00 100%);
+    border-radius: 6px;
+    min-height: 2px;
+}
+
+
+
+
 .rank-task{
     width: 324px;
     min-height: 160px;

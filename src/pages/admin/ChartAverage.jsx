@@ -72,7 +72,6 @@ export default function BieuDoDiem() {
 
   return (
     <CardContent className="chart-container">
-      {/* Header */}
       <Box className="chart-header">
         <Typography variant="h6" className="chart-title">
           Điểm trung bình
@@ -109,7 +108,6 @@ export default function BieuDoDiem() {
         </Menu>
       </Box>
 
-      {/* Chart */}
       <Box className="chart-content">
         <ResponsiveContainer width="100%" height={222}>
           <BarChart data={chartData}>

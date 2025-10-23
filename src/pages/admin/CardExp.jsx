@@ -30,14 +30,14 @@ export default function CardExp({current = 13, total = 20}) {
           >
             11
           </Typography>
-          <Typography style={{width: "290px", color: "#333333", lineHeight: "30px", fontSize: "20px", height: "30px", fontFamily: "Metropolis", fontWeight:600, }}>Tổng kinh nghiệm (XP)</Typography>
+          <Typography style={{width: "290px", color: "#5e5e5e", lineHeight: "30px", fontSize: "20px", height: "30px", fontFamily: "Metropolis", fontWeight:600, }}>Tổng kinh nghiệm (XP)</Typography>
         </Box>
         <Typography style={{fontWeight: 500, lineHeight:"20px", color:"#6E6E6E", width: "290px", height: "20px",fontSize: "14px",}}> Hoàn thành mục tiêu hàng ngày để thêm XP</Typography>
         </Box>
           <Box className="cal-exp">
             <Box className="bar">
             <Typography style={{color: "#D9AA00", fontSize: "14px", fontWeight: 700, lineHeight: "22px", width:"60px", heigth: "22px" }}>Hôm nay</Typography>
-            <Typography style={{color: "#D9AA00", fontSize: "14px", fontWeight: 700, lineHeight: "22px", }}>+ {current} XP</Typography>
+            <Typography style={{color: "#D9AA00", fontSize: "14px", fontWeight: 700, lineHeight: "22px",  width:"48px", heigth: "22px"}}>+ {current} XP</Typography>
             </Box>
           </Box>
       </Box>

@@ -27,7 +27,7 @@ export default function CardStreak() {
           <Typography
             style={{ width: '326px', fontWeight: 900, height: '30px', color: "#262626", lineHeight: "30px", fontFamily: 'Inter', fontSize: '40px' }}
           >11</Typography>
-          <Typography style={{width: "327px", color: "#333333", lineHeight: "30px", fontSize: "20px", height: "30px", fonFamily: "Metropolis", fontWeight:700, }}>Chuỗi liên tục</Typography>
+          <Typography style={{width: "327px", color: "#5e5e5e", lineHeight: "30px", fontSize: "20px", height: "30px", fonFamily: "Metropolis", fontWeight:700, }}>Chuỗi liên tục</Typography>
         </Box>
         <Typography style={{fontWeight: 500, lineHeight:"20px", color:"#6E6E6E", width: "327px", height: "20px", fontFamily: "Inter",fontSize: "14px",}}> Đăng nhập hàng ngày để xây dựng chuỗi</Typography>
       </Box>
