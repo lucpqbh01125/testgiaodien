@@ -1,0 +1,32 @@
+.ads-container {
+    background-color: #ffffff;
+    width: 364px;
+    height: 260px;
+    opacity: 1;
+    gap: 12px;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.ads-container img {
+    width: 332px;
+    height: 200px;
+    opacity: 1;
+    border-radius: 12px;
+
+}
+.ads-container p {
+    font-family: Inter;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #FA9300;
+    cursor: pointer;
+
+}

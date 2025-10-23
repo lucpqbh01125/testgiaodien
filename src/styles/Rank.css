@@ -1,0 +1,255 @@
+.rank-container {
+    width: 364px;
+    min-height: 524px;
+    height: auto;
+    opacity: 1;
+    gap: 24px;
+    padding-top: 24px;
+    padding-right: 20px;
+    padding-bottom: 24px;
+    padding-left: 20px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    transition: height 0.3s ease;
+}
+
+.rank-header{
+    width: 324px;
+    height: 268px;
+    opacity: 1;
+    gap: 12px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.rank-divider{
+    width: 324px;
+    height: 0px;
+    opacity: 1;
+    border-width: 1px;
+}
+
+
+
+.rank-header-content{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 28px;
+    align-items: center;
+
+}
+.rank-header-content h5{
+    width: 202px;
+    height: 28px;
+    opacity: 1;
+    font-family: Metropolis;
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0%;
+}
+.rank-header-content h6{
+    width: 74px;
+    height: 16px;
+    opacity: 1;
+    font-family: Inter;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #FA9300;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.rank-header-content h6:hover{
+    color: #E67E00;
+    transform: scale(1.05);
+}
+
+
+.rank-content{
+   width: 324px;
+    height: 228px;
+    opacity: 1;
+    gap: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rank-item{
+    width: auto;
+    height: 200px;
+    opacity: 1;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+
+.rank-item-header{
+    width: 100px;
+    height: 92px;
+    opacity: 1;
+    gap: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.rank-item-header p{
+    font-family: Inter;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: center;
+    display: flex;
+    width: 100px;
+    height: 20px;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rank-item-header-user{
+    width: 40px;
+    height: 40px;
+    opacity: 1;
+    border-radius: 50%;
+    background-color: #FA9300;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.rank-item-header-user-info img{
+    width: 24px;
+    height: 24px;
+    opacity: 1;
+
+}
+.rank-item-header-user-info{
+    width: 55px;
+    height: 24px;
+    opacity: 1;
+    gap: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.rank-tanggiam .linear{
+    width: 100px;
+    height: 100px;
+    opacity: 0.5;
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+    box-sizing: border-box;
+      transform: rotate(-90deg);
+
+}
+.rank-task{
+    width: 324px;
+    min-height: 160px;
+    height: auto;
+    opacity: 1;
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+}
+.rank-task-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    min-height: 120px;
+    height: auto;
+    opacity: 1;
+    gap: 16px;
+    transition: height 0.3s ease;
+}
+
+.rank-task-item{
+    width: 324px;
+    height: 52px;
+    opacity: 1;
+    gap: 12px;
+    display:flex;
+    align-items: center;
+
+}
+
+.rank-task-item img{
+    width: 40px;
+    height: 40px;
+}
+
+
+.rank-task-info{
+    width: 272;
+    height: 52px;
+    opacity: 1;
+    gap: 8px;
+    background-color: #F5F5F5;
+
+}
+.rank-task-info p{
+    width: 161px;
+    height: 24px;
+    opacity: 1;
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #5E5E5E;
+}
+
+.rank-task-progress{
+    width: 272px;
+    height: 20;
+    opacity: 1;
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rank-task-progress p{ 
+    font-family: Inter;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: right;
+    vertical-align: middle;
+    width: 42px;
+    height: 20px;
+    opacity: 1;
+
+
+}
+.rank-task-progress .linear {
+    width: 100%;
+    height: 14px;
+    opacity: 1;
+    padding-right: 56.19px;
+    border-radius: 7px;
+
+}

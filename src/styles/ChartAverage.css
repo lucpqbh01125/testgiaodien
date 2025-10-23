@@ -1,0 +1,203 @@
+.chart-container{
+  width: 759px;
+  height: 390px;
+  gap: 24px;
+  opacity: 1;
+  padding-top: 24px;
+  padding-right: 20px;
+  padding-bottom: 24px;
+  padding-left: 20px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+}
+.chart-card {
+  border-radius: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 719px;
+  height: 36px;
+  justify-content: space-between;
+  opacity: 1;
+
+}
+.chart-bar{
+  width: 99.57142639160156;
+  height: 183;
+  gap: 2px;
+  opacity: 1;
+  padding-right: 19px;
+  padding-left: 19px;
+
+}
+.chart-header h6{
+  font-family: Metropolis;
+  font-weight: 540;
+  font-style: Semi Bold;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  width: 158px;
+  height: 28px;
+  opacity: 1;
+  color: #5F5F5F;
+}
+.chart-week-selector{
+  width: 81px;
+  height: 36px;
+  gap: 4px;
+  opacity: 1;
+  padding-top: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  background-color: #F2F2F2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-week-selector p{
+  width: 33px;
+  height: 20px;
+  opacity: 1;
+  font-family: Inter;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: #333333;
+  white-space: nowrap;
+
+
+
+}
+.chart-week-selector .chart-week-icon{
+  width: 18px;
+  height: 18px;
+  opacity: 1;
+  color: Gray/900;
+}
+
+
+.chart-content {
+  width: 719px;
+  height: 222px;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+}
+
+/* Bao quanh 7 cột (Thứ 2 - Chủ nhật) */
+.chart-responsive-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  gap: 2px;
+  box-sizing: border-box;
+  opacity: 1;
+}
+.filter-title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tuan-title p{
+  width: 33px;
+  height: 20px;
+  opacity: 1;
+  font-family: Inter;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+
+
+}
+
+/* Căn đều và bỏ viền mặc định của Recharts */
+.recharts-surface {
+  overflow: visible;
+}
+
+.recharts-bar {
+  transform: translateX(0);
+}
+
+/* Căn trục và font */
+.recharts-cartesian-axis-tick-value {
+  font-size: 12px;
+  fill: #555;
+}
+
+/* Tooltip */
+.recharts-default-tooltip {
+  border-radius: 8px;
+  padding: 4px 8px;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.chart-title {
+  font-weight: 540;
+}
+
+.chart-week-selector {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.chart-week-text {
+  color: #666;
+  font-weight: 500;
+}
+
+.chart-footer-container {
+  width: 719px;
+  height: 20px;
+  gap: 8px;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chart-footer-container p{
+  font-family: Inter;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  width: 35px;
+  height: 20px;
+  opacity: 1;
+}
+
+
+.chart-footer {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  background-color: #FFA82B;
+  border-radius: 50%;
+}
