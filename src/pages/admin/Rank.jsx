@@ -1,27 +1,25 @@
 import React, { useState } from "react";
-import { Box, Typography, Divider, LinearProgress } from "@mui/material";
+import { Box, Typography, Divider, LinearProgress, Button } from "@mui/material";
 import "@/styles/Rank.css";
 
 function Rank() {
   const [showAllTasks, setShowAllTasks] = useState(false);
   const [showAllRank, setShowAllRank] = useState(false);
 
-  const dataRank = [
+  const [rankData, setRankData] = useState([
     {
       id: 1,
       name: "MD",
       role: "Người dùng",
       img: "src/assets/lua.png",
-      score: 360,
-      progress: 85, 
+      score: 260,
     },
     {
       id: 2,
       name: "Anna",
       role: "Người dùng",
       img: "src/assets/da.png",
-      score: 295,
-      progress: 60,
+      score: 495,
     },
     {
       id: 3,
@@ -29,9 +27,14 @@ function Rank() {
       role: "Người dùng",
       img: "src/assets/lua.png",
       score: 270,
-      progress: 45,
     },
-  ];
+  ]);
+
+  const maxScore = Math.max(...rankData.map(user => user.score));
+  const dataRankWithProgress = rankData.map(user => ({
+    ...user,
+    progress: (user.score / maxScore) * 100
+  }));
 
   const dataTasks = [
     {
@@ -79,11 +82,44 @@ function Rank() {
     setShowAllRank(!showAllRank);
   };
 
+  const updateRankData = (newData) => {
+    setRankData(newData);
+  };
+
+
+  const handleTestUpdate = () => {
+    const newTestData = [
+      {
+        id: 1,
+        name: "MD",
+        role: "Người dùng",
+        img: "src/assets/lua.png",
+        score: 400, 
+      },
+      {
+        id: 2,
+        name: "Anna",
+        role: "Người dùng",
+        img: "src/assets/da.png",
+        score: 600, 
+      },
+      {
+        id: 3,
+        name: "Linh",
+        role: "Người dùng",
+        img: "src/assets/lua.png",
+        score: 350, 
+      },
+    ];
+    updateRankData(newTestData);
+  };
+
   const displayedTasks = showAllTasks ? dataTasks : dataTasks.slice(0, 2);
-  const displayedRank = showAllRank ? dataRank : dataRank.slice(0, 3);
+  const displayedRank = showAllRank ? dataRankWithProgress : dataRankWithProgress.slice(0, 3);
 
   return (
     <Box className="rank-container">
+      
       <Box className="rank-header">
         <Box className="rank-header-content">
           <Typography variant="h5">Bảng xếp hạng</Typography>
@@ -99,7 +135,13 @@ function Rank() {
         <Box className="rank-content">
           {displayedRank.map((user) => (
             <Box key={user.id} className="rank-item">
-              <Box className="rank-item-header">
+              <Box 
+                className="rank-item-header"
+                style={{
+                  transform: `translateY(${((100 - user.progress) / 100) * 80}px)`,
+                  transition: 'transform 0.3s ease'
+                }}
+              >
                 <Box className="rank-item-header-user">
                   <Typography variant="body1">{user.name}</Typography>
                 </Box>
@@ -111,10 +153,12 @@ function Rank() {
               </Box>
 
               <Box className="rank-tanggiam">
-                <LinearProgress
-                  variant="determinate"
-                  value={user.progress}
-                  className="linear"
+                <Box 
+                  className="custom-progress-bar"
+                  style={{
+                    height: `${user.progress}%`,
+                    transition: 'height 0.3s ease'
+                  }}
                 />
               </Box>
             </Box>
